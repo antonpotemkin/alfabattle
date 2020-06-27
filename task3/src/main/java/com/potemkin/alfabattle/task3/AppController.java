@@ -2,6 +2,7 @@ package com.potemkin.alfabattle.task3;
 
 import com.potemkin.alfabattle.task3.model.Branch;
 import com.potemkin.alfabattle.task3.model.DistanceEntity;
+import com.potemkin.alfabattle.task3.model.Predict;
 import com.potemkin.alfabattle.task3.service.AppService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,12 @@ public class AppController {
     public DistanceEntity calculateDistance(@RequestParam(name = "lat") String lat, @RequestParam(name = "lon") String lon) {
         log.info("calculateDistance {}, {}",lat, lon);
         return service.findNearest(Double.parseDouble(lat), Double.parseDouble(lon));
+    }
+
+    @GetMapping("/branches/{id}/predict")
+    public Predict predict(@PathVariable int id,
+                           @RequestParam(name = "dayOfWeek") String dayOfWeek, @RequestParam(name = "hourOfDay") String hourOfDay) {
+        log.info("predict {}", id);
+        return new Predict(service.getById(id),Integer.parseInt(dayOfWeek),Integer.parseInt(hourOfDay),0);
     }
 }
