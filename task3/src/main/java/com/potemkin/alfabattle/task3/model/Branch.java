@@ -14,15 +14,4 @@ public class Branch {
     Double lon;
     Double lat;
     String address;
-
-    @Override
-    public String toString() {
-        return "{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", lon=" + lon +
-                ", lat=" + lat +
-                ", address='" + address + '\'' +
-                '}';
-    }
 }
