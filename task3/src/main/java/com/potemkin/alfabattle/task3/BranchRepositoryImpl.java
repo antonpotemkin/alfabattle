@@ -1,5 +1,6 @@
 package com.potemkin.alfabattle.task3;
 
+import com.potemkin.alfabattle.task3.exception.BranchException;
 import com.potemkin.alfabattle.task3.model.Branch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,11 +38,10 @@ public class BranchRepositoryImpl {
                         logger.info("found branch {}", branch);
                         return branch;
                     } else {
+                        logger.info("not found");
                         throw new BranchException();
                     }
                 }
-            } catch (SQLException e) {
-                throw new BranchException();
             }
         }
     }
