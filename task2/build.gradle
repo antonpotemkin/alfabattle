@@ -1,0 +1,19 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.0.RELEASE'
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.springframework.boot'
+
+bootJar {
+    baseName = 'task2'
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.kafka:spring-kafka:2.5.3.RELEASE")
+    compileOnly "org.projectlombok:lombok:1.18.12"
+    annotationProcessor "org.projectlombok:lombok:1.+"
+
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}

@@ -1,0 +1,15 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.0.RELEASE'
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.springframework.boot'
+
+bootJar {
+    baseName = 'task4'
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
