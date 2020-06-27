@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Position {
-    int itemId;
+public class RequestPosition {
+    String itemId;
     int quantity;
 }

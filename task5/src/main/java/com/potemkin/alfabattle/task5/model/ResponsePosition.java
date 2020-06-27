@@ -7,9 +7,9 @@ import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
-public class Item {
+public class ResponsePosition {
     String id;
     String name;
-    String groupId;
     BigDecimal price;
+    BigDecimal regularPrice;
 }
