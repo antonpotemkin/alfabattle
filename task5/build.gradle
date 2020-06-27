@@ -11,6 +11,9 @@ bootJar {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    implementation 'com.opencsv:opencsv:5.0'
+    compileOnly "org.projectlombok:lombok:1.18.12"
+    annotationProcessor "org.projectlombok:lombok:1.+"
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 
 }
