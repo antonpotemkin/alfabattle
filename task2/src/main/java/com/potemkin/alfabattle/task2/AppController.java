@@ -12,18 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AppController {
     private final Logger logger = LoggerFactory.getLogger(AppController.class);
-    private static final String TOPIC = "topic";
-    @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
 
-    @PostMapping
-    private void post(@RequestBody String string) {
-        kafkaTemplate.send(TOPIC, string);
-    }
-
-    @GetMapping
-    public String hello() {
-        return "Hello";
+    @GetMapping("analytic")
+    public String analytic() {
+        throw new UserException();
     }
 
 }
