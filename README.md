@@ -1,4 +1,7 @@
- && java -jar build/libs/task1.jar
+Решение задач на онлайн-соревновании https://alfabattle.ru/1
+
+
+&& java -jar build/libs/task1.jar
 
 docker build -t task1 .  
 docker run -p 8080:8080 task1 
